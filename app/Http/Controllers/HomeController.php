@@ -22,6 +22,7 @@ class HomeController extends Controller
         // return view('index')->with('title', $title);
 
         // passing array using  with
+        print_r(route('index'));
         return view('index')->with('data', $data);
 
     }

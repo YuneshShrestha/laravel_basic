@@ -33,7 +33,8 @@ Route::get('/home', function(){
     ]);
 });
 
-Route::get('/index', [HomeController::class, 'index']);
+// naming routes 
+Route::get('/index', [HomeController::class, 'index'])->name('index');
 
 // Route parameters with patters (for text)
 Route::get('/index/{text}', [HomeController::class, 'show'])->where('text','[a-zA-Z]+');
