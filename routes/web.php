@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +32,6 @@ Route::get('/home', function(){
         'age'=>'18'
     ]);
 });
+Route::get('/index', [HomeController::class, 'index']);
+// you can also write this type
+// Route::get('/index', 'App\Http\Controllers\HomeController@index');
