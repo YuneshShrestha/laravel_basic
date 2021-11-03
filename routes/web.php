@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,30 +15,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 // Route to users -string
-Route::get('/home', function(){
-    return 'Home';
-});
+// Route::get('/home', function(){
+//     return 'Home';
+// });
 // Route to users - array(json)
-Route::get('/home', function(){
-    return ['Home','Page','Index Page'];
-});
+// Route::get('/home', function(){
+//     return ['Home','Page','Index Page'];
+// });
 // Route to users - json object
-Route::get('/home', function(){
-    return response()->json([
-        'name'=>'Yunesh',
-        'age'=>'18'
-    ]);
-});
+// Route::get('/home', function(){
+//     return response()->json([
+//         'name'=>'Yunesh',
+//         'age'=>'18'
+//     ]);
+// });
 
 // naming routes 
-Route::get('/index', [HomeController::class, 'index'])->name('index');
+// Route::get('/index', [HomeController::class, 'index'])->name('index');
 
 // Route parameters with patters (for text)
-Route::get('/index/{text}', [HomeController::class, 'show'])->where('text','[a-zA-Z]+');
+// Route::get('/index/{text}', [HomeController::class, 'show'])->where('text','[a-zA-Z]+');
 
 // Route parameters with patters (for num)
 // Route::get('/index/{id}', [HomeController::class, 'show'])->where('id','[0-9]+');
@@ -50,3 +51,6 @@ Route::get('/index/{text}', [HomeController::class, 'show'])->where('text','[a-z
 
 // you can also write this type
 // Route::get('/index', 'App\Http\Controllers\HomeController@index');
+
+Route::get('/',[PageController::class,'homepage']);
+Route::get('/about',[PageController::class,'aboutpage']);
