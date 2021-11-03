@@ -32,6 +32,8 @@ Route::get('/home', function(){
         'age'=>'18'
     ]);
 });
+
 Route::get('/index', [HomeController::class, 'index']);
+Route::get('/index/{id}', [HomeController::class, 'show']);
 // you can also write this type
 // Route::get('/index', 'App\Http\Controllers\HomeController@index');
