@@ -34,6 +34,18 @@ Route::get('/home', function(){
 });
 
 Route::get('/index', [HomeController::class, 'index']);
-Route::get('/index/{id}', [HomeController::class, 'show']);
+
+// Route parameters with patters (for text)
+Route::get('/index/{text}', [HomeController::class, 'show'])->where('text','[a-zA-Z]+');
+
+// Route parameters with patters (for num)
+// Route::get('/index/{id}', [HomeController::class, 'show'])->where('id','[0-9]+');
+
+// Route parameters with patters (for both num and text)
+// Route::get('/index/{id}/{text}', [HomeController::class, 'show'])->where([
+//     'id'=> '[0-9]+',
+//     'text'=> '[a-zA-Z]+',
+// ]);
+
 // you can also write this type
 // Route::get('/index', 'App\Http\Controllers\HomeController@index');

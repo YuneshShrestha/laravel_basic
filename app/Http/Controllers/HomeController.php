@@ -32,8 +32,8 @@ class HomeController extends Controller
             "para"=> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente nesciunt, aperiam illo accusamus repellendus, voluptate alias, ad quaerat exercitationem quisquam impedit totam dolorem est? Porro sed sapiente veniam est quod."
         ];
         // Method 1
-        $item = $data[$value];
-        return view('show')->with('item',$item);
+        $item = $data[$value] ?? 'Here '.$value.' does not exists';
+        return view('show')->with('item', $item);
 
         // Method 2
         // passing one key's value using variable contents
