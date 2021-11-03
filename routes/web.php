@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route to users -string
+Route::get('/home', function(){
+    return 'Home';
+});
+// Route to users - array(json)
+Route::get('/home', function(){
+    return ['Home','Page','Index Page'];
+});
+// Route to users - json object
+Route::get('/home', function(){
+    return response()->json([
+        'name'=>'Yunesh',
+        'age'=>'18'
+    ]);
+});
