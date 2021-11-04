@@ -1,0 +1,12 @@
+body {
+  background-color: blueviolet;
+  color: yellow;
+}
+/* important commands while making sass file */
+/* 
+     npm install  
+     npm run dev  
+     npm run watch
+     npm install sass-loader@^12.1.0 sass resolve-url-loader@^4.0.0 --save-dev --legacy-peer-deps
+     npm install ; npm run dev
+*/
