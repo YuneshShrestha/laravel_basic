@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function homepage(){
-        $data = 'Yunesh';
-        return view('homepage')->with('data', $data);
+        $data = ['Ram','Gita', 'Sita'];
+        return view('homepage',[
+            'data'=>$data
+        ]);
     }
     public function aboutpage(){
         return view('aboutpage');
